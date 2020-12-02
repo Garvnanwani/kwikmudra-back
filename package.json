@@ -1,0 +1,8 @@
+{
+  "name": "kwikmudra",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "https://github.com/Garvnanwani/kwikmudra-back.git",
+  "author": "Garvnanwani <garvnanwani88@gmail.com>",
+  "license": "MIT"
+}
