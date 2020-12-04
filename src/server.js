@@ -5,7 +5,7 @@ const compression = require("compression")
 const morgan = require("morgan")
 require("dotenv").config()
 const connectDB = require("./utils/db")
-
+const authRouter = require('./routes/auth');
 const app = express()
 const PORT = process.env.PORT || 5000
 
@@ -21,6 +21,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 connectDB()
+
+app.use("/api/auth", authRouter)
 
 app.use(errorHandler)
 
