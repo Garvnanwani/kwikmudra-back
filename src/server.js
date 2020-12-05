@@ -38,13 +38,13 @@ const userSchema =new Schema({
 
 const userData = mongoose.model('userData',userSchema);
 
-app.get('/',function(req,res){
+app.post('/',function(req,res){
 
   const data = {
-    name:'shubh om khuswaha',
-    phone:'123456789',
-    address:'varanasi 123 india 221002',
-    email:'hariomkushwaha1947@gmail.com'
+    name: req.body.name,
+    phone: req.body.phone,
+    income: req.body.income,
+    address: req.body.address,
   };
 
 
