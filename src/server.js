@@ -10,7 +10,9 @@ const errorHandler = require("./middlewares/errorHandler")
 const app = express()
 const PORT = process.env.PORT || 5000
 
-app.use(morgan("dev"))
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"))
+}
 app.use(helmet())
 app.use(helmet.hidePoweredBy())
 app.use(cors())
@@ -25,6 +27,10 @@ if (process.env.NODE_ENV === "production") {
 connectDB()
 
 app.use("/api/auth", authRouter)
+
+app.get("/", (req, res) => {
+  res.send("This is the api of kwikmudra")
+})
 
 app.use(errorHandler)
 
