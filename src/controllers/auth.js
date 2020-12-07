@@ -9,7 +9,7 @@ exports.login = asyncHandler(async (req, res, next) => {
   // both fields should be filled
   if (!username || !password) {
     return next({
-      message: "Please enter both email and password",
+      message: "Please enter both username and password",
       statusCode: 400,
     })
   }
@@ -19,7 +19,7 @@ exports.login = asyncHandler(async (req, res, next) => {
 
   if (!user) {
     return next({
-      message: "Email not registered",
+      message: "User not found",
       statusCode: 400,
     })
   }
