@@ -37,9 +37,15 @@ exports.login = asyncHandler(async (req, res, next) => {
 })
 
 exports.signup = asyncHandler(async (req, res, next) => {
-  const { username, fullname, password } = req.body
+  const { username, fullName, email, password, referralCode } = req.body
 
-  const user = await User.create({ username, fullname, password })
+  const user = await User.create({
+    username,
+    fullName,
+    email,
+    password,
+    referralCode,
+  })
 
   const token = user.getJwtToken()
 
