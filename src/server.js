@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
   res.send("This is the api of kwikmudra")
 })
 
-app.use(errorHandler)
+// app.use(errorHandler)
 
 app.listen(PORT, () => {
   console.log(`Server started on PORT ${PORT}`)
