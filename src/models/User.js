@@ -32,8 +32,8 @@ const UserSchema = new mongoose.Schema(
       type: String,
     },
     role: {
-      type: Number,
-      default: 0,
+      type: String,
+      default: "User",
     },
     resetToken: {
       type: String,
