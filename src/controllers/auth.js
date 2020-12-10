@@ -53,10 +53,10 @@ exports.signup = asyncHandler(async (req, res, next) => {
 })
 
 exports.userprofile = asyncHandler(async (req, res, next) => {
-  const { avatar, username, fullname, email, _id, referralCode } = req.user
+  const { avatar, username, fullname, email, _id, referralCode, role, phoneNo } = req.user
 
   res.status(200).json({
     success: true,
-    data: { avatar, username, fullname, email, _id, referralCode },
+    data: { avatar, username, fullname, email, _id, referralCode, role, phoneNo },
   })
 })
